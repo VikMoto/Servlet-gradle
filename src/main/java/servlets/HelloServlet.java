@@ -2,6 +2,7 @@ package servlets;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,17 +19,13 @@ import java.util.Map;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
-@WebServlet(name="first", value = "/first")
+@WebServlet(value = "/first")
 public class HelloServlet extends HttpServlet {
 
 
     @Override
-    public void init()  {
-        try {
-            super.init();
-        } catch (ServletException e) {
-            e.printStackTrace();
-        }
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
     }
 
     @Override
